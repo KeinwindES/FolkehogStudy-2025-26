@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMAO</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <div class="center-box">
+        <h1>You clicked me!</h1>
+        <p id="congratsText">Congratulations! You have successfully clicked the button.</p>
+        <a href="index.html" class="button">Back to Home</a>
+        <p style="color: aqua;">This is some additional information.</p>
+
+        <input type="text" id="myInput">
+        <button id="submitButton">Submit</button>
+
+        <p id="responseText"></p>
+        <a href="DANEW.html">HERE DA NEWS</a>
+
+        <div class="hidden">
+            <p>YO WSG</p>
+        </div>
+    </div>
+
+    <script>
+        const submitButton = document.getElementById("submitButton");
+        const myInput = document.getElementById("myInput");
+        const congratsText = document.getElementById("congratsText");
+
+        submitButton.addEventListener("click", function() {
+            const inputValue = myInput.value;
+            console.log("Input value submitted: " + inputValue);
+            myInput.value = ""; // Clear input after submit
+        });
+
+        congratsText.textContent = "Never gonna give you up!";
+        myInput.value = ""; // Reset input on page load
+        console.log("Page loaded, input reset.");
+    </script>
+</body>
+</html>

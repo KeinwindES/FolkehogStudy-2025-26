@@ -1,0 +1,99 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin: 12px 0;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.top-box {
+  margin-top: 20px; /* increase the margin-top to lower the box */
+  position: absolute;
+  top: 0%; /* adjust the top property to lower the box */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 5%;
+  background-color: blue;
+  border: 2px solid black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.center-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 85%;
+  background-color: red;
+  border: 2px solid black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+p {
+  font-size: 16px;
+  color: black;
+}
+
+button {
+  font-size: 16px;
+  color: black;
+  background-color: gray;
+  border: 2px solid black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: darkgray;
+}
+
+img {
+  width: 74%;
+  height: 25%;
+  display: block;
+  margin: 0 auto;
+  padding: 8px 12px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding: 8px 12px;
+}

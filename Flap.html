@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAPPING HARD</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <div class="top-box">
+        <h1>FLAPPING HARD</h1>
+    </div>
+    <div class="center-box">
+        <p>This is a new page.</p>
+        <a href="index.html" class="button">Back to Home</a>
+
+        <!-- make the picture clickable -->
+        <a href="OIP-199437565.jpg">
+            <img src="OIP-199437565.jpg" alt="">
+        </a>
+        <!-- give points when i click -->
+        <script>
+            var points = 0;
+            const imgLink = document.querySelector('.center-box a[href="OIP-199437565.jpg"]');
+            imgLink.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the link from opening
+                // Give points logic here
+                points ++;
+                document.getElementById('pointsDisplay').innerText = points;
+            });
+        </script>
+        <p>Total Flaps: <span id="pointsDisplay">0</span></p>
+    </div>
+</body>
+</html>
