@@ -1,0 +1,90 @@
+/* Styling for the overall page */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.header-section {
+    background-color: rgb(255, 239, 254);
+    margin: 0;
+    overflow: hidden;
+}
+
+.description-box {
+    /* Css variables is a thing :-) */
+    --light-color: rgb(248, 194, 255);
+    --dark-color: rgb(30, 0, 31);
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: 2px solid var(--light-color);
+
+    padding: 1em;
+    max-width: 40ch;
+    margin: 1em auto 1em auto;
+    border-radius: 1em;
+
+    h1 {
+        margin: 0;
+    }
+
+    p {
+        margin: 1em 0 0 0;
+        font-weight: 200;
+    }
+
+    ul {
+        list-style: circle;
+    }
+
+    code {
+        background-color: rgb(75, 75, 75);
+        padding: 0.3em;
+        margin: 0.2em;
+        border-radius: 0.2em;
+    }
+}
+
+.footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background-color: rgb(233, 255, 233);
+    color: rgb(13, 97, 0);
+}
+
+/* Sections */
+.button-display {
+    position: relative;
+
+    /* Align content in center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50vh;
+    min-height: 400px;
+
+    border-bottom: solid 1px black;
+
+    .button-section-title {
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        opacity: 0.35;
+
+        /* Make text non-selectable */
+        cursor: none;
+        user-select: none;
+        pointer-events: none;
+    }
+}

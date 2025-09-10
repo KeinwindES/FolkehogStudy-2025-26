@@ -1,0 +1,120 @@
+<!-- Define html version/document type -->
+<!DOCTYPE html>
+<!-- Define document language : english -->
+<html lang="en">
+
+<!-- Head is all the non-visual stuff and imported files -->
+
+<head>
+    <!-- Define character encoding https://www.w3schools.com/html/html_charset.asp -->
+    <meta charset="UTF-8">
+    <!-- Help scaling on phones https://www.w3schools.com/html/html_responsive.asp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Set the tab text https://www.w3schools.com/html/html_page_title.asp -->
+    <title>Buttons</title>
+
+    <!-- Set tab icon https://www.w3schools.com/html/html_favicon.asp -->
+    <link rel="shortcut icon" href="favicon.webp" type="image/x-icon">
+
+    <!-- Import style sheet https://www.w3schools.com/html/html_css.asp-->
+    <link rel="stylesheet" href="./style-page.css">
+    <link rel="stylesheet" href="./style-buttons.css">
+    <!-- Import Script file -->
+    <script src="./script.js" defer></script>
+
+    <!-- GOOGLE FONT                                    -->
+    <!-- https://fonts.google.com/specimen/Indie+Flower -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+
+<!-- The body element is all visual stuff that renders in the browser -->
+
+<body>
+
+    <!-- Exercise Description -->
+    <header class="header-section">
+        <div class="description-box">
+            <h1>Exercise 1 : Buttons</h1>
+            <p>Create 9 visually unique buttons
+                <br>
+                <br>
+                Optionally:
+            <ul>
+                <li>create unique hover effects for each button using css. <br>
+                    <ul>
+                        <li>
+                            Tip use the css :hover selector
+                            <br><code>#btn-1:hover {}</code>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>create unique click effects for each button using javascript and the "click" event
+                    <code>button.addEventListener("click", (event) => { })</code>, and/or expand the hover effects using
+                    "mouseover" and "mouseout" events
+                </li>
+            </ul>
+            </p>
+        </div>
+    </header>
+
+    <!-- Buttons in excerice -->
+    <main>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 1</h2>
+            <button class="btn" id="btn-1">button 1</button>
+        </section>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 2</h2>
+            <button class="btn" id="btn-2">button 2</button>
+        </section>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 3</h2>
+            <button class="btn" id="btn-3">button 3</button>
+        </section>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 4</h2>
+            <button class="btn" id="btn-4">button 4</button>
+        </section>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 5</h2>
+            <button class="btn" id="btn-5">button 5</button>
+        </section>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 6</h2>
+            <button class="btn" id="btn-6">button 6</button>
+        </section>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 7</h2>
+            <button class="btn" id="btn-7">button 7</button>
+        </section>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 8</h2>
+            <button class="btn" id="btn-8">button 8</button>
+        </section>
+        <section class="button-display">
+            <h2 class="button-section-title">Button 9</h2>
+            <button class="btn" id="btn-9">button 9</button>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        Add More buttons if you feel extra creative.
+    </footer>
+
+    <script>
+        /* make btn 3 work print to the console and alert */
+        const btn3 = document.getElementById("btn-3");
+        btn3.addEventListener("click", (event) => {
+            console.log("LMAO JK VRO", event.target);
+            alert("installing virus");
+        });
+    </script>
+</body>
+
+</html>

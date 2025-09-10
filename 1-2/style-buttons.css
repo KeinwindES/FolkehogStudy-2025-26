@@ -1,0 +1,160 @@
+/* Styling for the button exercise */
+
+/* Styling applied to all buttons */
+.btn {
+    padding: 1em;
+}
+
+/* Styling applied Individual buttons */
+
+/* Button 1 Styling EXAMPLE */
+#btn-1 {
+    /* Example styling */
+    background-color: red;
+    border-radius: 1em;
+    border: 5px orange dotted;
+
+    /* Google font httsps://fonts.google.com/specimen/Indie+Flower */
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+    /* Makes smooth transition betwee */
+    transition: all 1s linear;
+
+    /* Hover styling */
+    &:hover {
+        background-color: gray;
+        transform: scale(1.2);
+
+        /* APPLY ANIMATION */
+        animation: animationexample 2s linear infinite;
+    }
+}
+
+/* DEFINE ANIMATIoN */
+@keyframes animationexample {
+    0% {
+        background-color: red;
+        border-color: yellow;
+    }
+
+    50% {
+        background-color: rgb(242, 255, 0);
+        border-color: red;
+    }
+
+    100% {
+        background-color: red;
+        border-color: yellow;
+    }
+}
+
+/* Button 2 styling */
+#btn-2 {
+    background-color: green;
+    border-radius: 50%;
+    border: 5px blue;
+    width: 5em;
+    height: 5em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-2:hover {
+    background-color: gray;
+    /*turn the button into a square on hover*/
+    border-radius: 0;
+    animation: square 1s forwards;
+
+}
+
+/* Button 3 styling */
+#btn-3 {
+    background-color: blue;
+    border-radius: 1em;
+    border: 5px red dashed;
+
+}
+
+#btn-3:hover {
+    background-color: green;
+    border: 5px yellow dashed;
+}
+
+/* Button 4 styling */
+#btn-4 {
+    background-color: purple;
+    border-radius: 1em;
+    border: 5px pink double;
+    transition: all 1s linear;
+}
+
+#btn-4:hover {
+    background-color: gray;
+    border: 5px orange double;
+}
+
+/* Button 5 styling */
+#btn-5 {
+    background-color: purple;
+    /* background image */
+    border-radius: 1em;
+    border: 5px pink double;
+    background-image: url('Untitled.png');
+    background-size: cover;
+    background-position: center;
+    transition: all 1s linear;
+}
+
+#btn-5:hover {
+    background-color: gray;
+}
+
+/* Button 6 styling */
+#btn-6 {
+    background-color: pink;
+}
+
+#btn-6:hover {
+    background-color: gray;
+    /*move the button down 10px on hover*/
+    transform: translateY(10px);
+}
+
+/* Button 7 styling */
+#btn-7 {
+    background-color: yellow;
+}
+
+#btn-7:hover {
+    background-color: gray;
+    /*rotate the button 45 degrees on hover*/
+    transform: rotate(45deg);
+}
+
+/* Button 8 styling */
+#btn-8 {
+    background-color: cyan;
+}
+
+#btn-8:hover {
+    background-color: gray;
+}
+
+/* Button 9 styling */
+#btn-9 {
+    background-color: brown;
+
+}
+#btn-8:active {
+    background-color: gray;
+    transform: scale(0.8);
+}
+
+#btn-9:hover {
+    background-color: gray;
+    /* make it smaller */
+    transform: scale(0.8);
+}
