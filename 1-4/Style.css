@@ -1,0 +1,46 @@
+#cookieButton {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #202320;
+    color: white;
+}
+#cookieButton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    transition: transform 0.1s;
+}
+#cookieButton:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
+
+#cookieCount {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+#resetButton {
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+#resetButton:hover {
+    background-color: #da190b;
+    transform: scale(1.05);
+    transition: transform 0.1s;
+}
+#upgrades {
+    margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
