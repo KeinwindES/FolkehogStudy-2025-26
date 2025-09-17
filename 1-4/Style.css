@@ -16,6 +16,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-size: cover;
+}
+#upgrades button{
+    background-image: url('button.png'); /* Ensure you have an upgrade.png image in the same directory */
+    border: none;
+    background-size: 100% 100%;
+    width: 126px;
+    height: 86px;
+
+
 }
 #resetButton {
     margin-top: 1rem;

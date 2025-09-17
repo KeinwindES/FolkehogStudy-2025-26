@@ -34,8 +34,12 @@ let upgradeTypes = initUpgrades();
 
 function initUpgrades() {
         let upgradeTypes = [
-        { name: "👩‍🦳", updateFreq: 1, amount: 0.1, upgradeLevel: 0, upgradeCost: 10 },
-        { name: "👨‍🌾", updateFreq: 5, amount: 5, upgradeLevel: 0, upgradeCost: 50 },
+        { name: "👩‍🦳", updateFreq: 1, amount: 1, upgradeLevel: 0, upgradeCost: 10 },
+        { name: "👨‍🌾", updateFreq: 1, amount: 5, upgradeLevel: 0, upgradeCost: 50 },
+        { name: "👩‍🍳", updateFreq: 1, amount: 20, upgradeLevel: 0, upgradeCost: 100 },
+        { name: "👩‍💻", updateFreq: 1, amount: 10, upgradeLevel: 0, upgradeCost: 500 },
+        { name: "👩‍🚀", updateFreq: 1, amount: 100, upgradeLevel: 0, upgradeCost: 1000 },
+        { name: "👩‍🔬", updateFreq: 1, amount: 200, upgradeLevel: 0, upgradeCost: 5000 },
     ]
     let storedData = localStorage.getItem("upgradeData");
     if (storedData != null) {
