@@ -83,8 +83,7 @@ function UpgradeButtonState() {
 
         button.disabled = currentCookieCount < upgradeType.upgradeCost;
         button.innerText = "Buy Upgrade (" + upgradeType.upgradeLevel + ")";
-
-    }
+        
 }
 
 function SaveButtonClicked() {
