@@ -1,9 +1,10 @@
 let currentCookieCount = 1;
 currentCookieCount = Number(localStorage.getItem("cookies"));
-updateHtml();
+
 
 function updateHtml() {
     cookieCount.innerText = "Cookies: " + currentCookieCount;
+    UpgradeButtonState();
 }
 
 function save(){
@@ -22,19 +23,28 @@ cookieButton.addEventListener("click", CookieClicked)
 
 resetButton.addEventListener("click", () => {
     currentCookieCount = 1;
+    localStorage.clear();
+    upgradeTypes = initUpgrades();
     save();
     updateHtml();
     upgradeTypes.forEach(upgrade => upgrade.upgradeLevel = 0);
+    location.reload();
 })
+let upgradeTypes = initUpgrades();
 
-let upgradeTypes = [
-    { name: "👩‍🦳", updateFreq: 1, amount: 0.1, upgradeLevel: 0, },
-    { name: "👨‍🌾", updateFreq: 5, amount: 5, upgradeLevel: 0 },
-]
-let storedData = localStorage.getItem("upgradeData");
-if (storedData != null) {
-    upgradeTypes = JSON.parse(storedData);
+function initUpgrades() {
+        let upgradeTypes = [
+        { name: "👩‍🦳", updateFreq: 1, amount: 0.1, upgradeLevel: 0, upgradeCost: 10 },
+        { name: "👨‍🌾", updateFreq: 5, amount: 5, upgradeLevel: 0, upgradeCost: 50 },
+    ]
+    let storedData = localStorage.getItem("upgradeData");
+    if (storedData != null) {
+        upgradeTypes = JSON.parse(storedData);
+    }   
+    return upgradeTypes;
 }
+
+let upgradeButtons = []
 
 for (let i = 0; i < upgradeTypes.length; i++) {
     const upgradeType = upgradeTypes[i];
@@ -43,6 +53,8 @@ for (let i = 0; i < upgradeTypes.length; i++) {
     let upgradeButton = document.createElement("button");
 
     upgradeButton.addEventListener("click", () => {
+        if (currentCookieCount < upgradeType.upgradeCost) return;
+        currentCookieCount -= upgradeType.upgradeCost;
         upgradeType.upgradeLevel += 1;
         upgradeButton.innerText = "Buy Upgrade (" + upgradeType.upgradeLevel + ")";
     });
@@ -51,6 +63,7 @@ for (let i = 0; i < upgradeTypes.length; i++) {
     upgradeContainer.appendChild(upgradeButton);
 
     upgrades.appendChild(upgradeContainer);
+    upgradeButtons.push(upgradeButton);
 
     setInterval(() => {
         currentCookieCount += upgradeType.upgradeLevel * upgradeType.amount;
@@ -58,3 +71,24 @@ for (let i = 0; i < upgradeTypes.length; i++) {
         updateHtml();
     }, 1000 * upgradeType.updateFreq);
 }
+
+function UpgradeButtonState() {
+    for (let index = 0; index < upgradeButtons.length; index++) {
+        const button = upgradeButtons[index];
+        const upgradeType = upgradeTypes[index];
+
+        button.disabled = currentCookieCount < upgradeType.upgradeCost;
+        button.innerText = "Buy Upgrade (" + upgradeType.upgradeLevel + ")";
+
+    }
+}
+
+function SaveButtonClicked() {
+    save();
+    updateHtml();
+}
+
+saveButton.addEventListener("click", SaveButtonClicked);
+
+save();
+updateHtml();
