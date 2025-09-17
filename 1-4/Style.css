@@ -16,29 +16,38 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-size: cover;
 }
+#upgrades button:disabled {
+    opacity: 0.5; /* Dim the button when disabled */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+    background-image: url('buttoncantbuy.png'); /* Ensure you have a button_disabled.png image in the same directory */
+}
 #upgrades button{
-    background-image: url('button.png'); /* Ensure you have an upgrade.png image in the same directory */
+    background-image: url('buttoncanbuy.png'); /* Ensure you have an upgrade.png image in the same directory */
     border: none;
     background-size: 100% 100%;
     width: 126px;
     height: 32px;
     margin: 0.5rem;
 
-
 }
 #resetButton {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
+    background-image: url('button.png');
+    border: none;
+    background-size: 100% 100%;
+    width: 126px;
+    height: 32px;
+    margin: 0.5rem;
 }
 #saveButton {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
+    border: none;
+    background-size: 100% 100%;
+    width: 126px;
+    height: 32px;
+    margin: 0.5rem;
+    background-image: url('button.png');
 }
 #upgrades {
     display: flex;
@@ -57,4 +66,21 @@ body {
 }
 #cookieButton:active {
     transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+a {
+    color: #000; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #555; /* Optional footer text color */
+}
+
+p {
+    margin: 0.2rem 0; /* Adjust paragraph margins */
 }
