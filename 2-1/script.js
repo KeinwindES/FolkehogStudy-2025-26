@@ -1,17 +1,27 @@
 // JavaScript to handle button clicks
 const button = document.getElementById("add-button");
-const input = document.getElementById("item-input");
 const list = document.getElementById("list");
 
+function getStoredItems() {
+    let storedData = localStorage.getItem("todoItems");
+    if (storedData != null) {
+        return JSON.parse(storedData);
+    }   
+    return [];
+}
+
 function updateHtml() {
-    cookieCount.innerText = "Cookies: " + currentCookieCount;
-    UpgradeButtonState();
+    list.innerHTML = "";
+    for (let i = 0; i < todoItems.length; i++) {
+        const item = todoItems[i];
+        let listItem = document.createElement("li");
+        listItem.innerText = item;
+        list.appendChild(listItem);
+    }
 }
 
 function save(){
-    localStorage.setItem("cookies", currentCookieCount);
-    let upgradeData = JSON.stringify(upgradeTypes);
-    localStorage.setItem("upgradeData", upgradeData);
+    localStorage.setItem("todoItems", JSON.stringify(todoItems));
 }
 
 function SaveButtonClicked() {
@@ -20,3 +30,15 @@ function SaveButtonClicked() {
 }
 
 saveButton.addEventListener("click", SaveButtonClicked);
+button.addEventListener("click", () => {
+    const input = document.getElementById("item-input");
+    const newItem = input.value;
+    if (newItem === "") return;
+    todoItems.push(newItem);
+    input.value = "";
+    save();
+    updateHtml();
+});
+
+let todoItems = getStoredItems();
+updateHtml();
