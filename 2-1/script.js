@@ -2,6 +2,12 @@
 const button = document.getElementById("add-button");
 const list = document.getElementById("list");
 
+function addItem(item) {
+    todoItems.push(item);
+    save();
+    updateHtml();
+}
+
 function getStoredItems() {
     let storedData = localStorage.getItem("todoItems");
     if (storedData != null) {
