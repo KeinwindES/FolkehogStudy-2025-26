@@ -17,7 +17,7 @@ button.addEventListener("click", function () {
         input.value = ""; // Clear input after adding
         SaveToLocalStorage(); // Save changes after adding
     } else {
-        alert("Bitte geben Sie einen Artikel ein.");
+        alert("Skriv noe.");
     }
 });
 
