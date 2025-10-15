@@ -18,3 +18,6 @@ const quizData = [
         correctAnwer: "a quiz"
     }
 ]
+
+var poeng = 0;
+var currentQuiz = 0;
