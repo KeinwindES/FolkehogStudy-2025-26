@@ -1,6 +1,6 @@
 const quizData = [
     {
-        question: "was ist 2+2?",
+        question: "hva er 2+2?",
         options: [
             "4",
             "22",
@@ -9,7 +9,7 @@ const quizData = [
         correctAnswer: "bob"
     },
     {
-        question: "wer ist der beste Charakter von Lego Ninjago?",
+        question: "hvem er den beste karakteren i Lego Ninjago?",
         options: [
             "Jay",
             "Kai",
@@ -19,7 +19,7 @@ const quizData = [
         correctAnswer: "Jay"
     },
     {
-        question: "wer ist der Ice König?",
+        question: "hvem er Ice Kongen?",
         options: [
             "Jay",
             "Kai",
@@ -29,14 +29,14 @@ const quizData = [
         correctAnswer: "Zane"
     },
     {
-        question: "Wo war Kais Feuer Schwert?",
+        question: "Hvor var Kais ild sverd?",
         options: [
-            "Im Feuer Tempel",
-            "Im Dschungel Tempel",
-            "Im Eis Tempel",
-            "Im Erde Tempel",
+            "I ildtempelet",
+            "I jungeltempelet",
+            "I istempelet",
+            "I jordtempelet",
         ],
-        correctAnswer: "Im Feuer Tempel"
+        correctAnswer: "I ildtempelet"
     }
 ]
 
@@ -64,9 +64,9 @@ function selectAnswer(selectedOption) {
     const currentQuizData = quizData[currentQuiz];
     if (selectedOption === currentQuizData.correctAnswer) {
         poeng++;
-        alert("Correct!");
+        alert("Riktig!");
     } else {
-        alert("Falsch!");
+        alert("Feil!");
     }
     currentQuiz++;
     if (currentQuiz < quizData.length) {
