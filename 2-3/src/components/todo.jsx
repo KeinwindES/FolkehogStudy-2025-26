@@ -9,8 +9,10 @@ export function Todo() {
             <div>
                 <input type="text" onChange={event => setTextBoxContent(event.target.value)} />
                 <button type="button" onClick={() => {
-                    setTodoList(previous => [...previous, textBoxContent]);
-                    return array;
+                    setTodoList(previous => {
+                        let array = [...previous, textBoxContent];
+                        return array;
+                    });
                 }}>Add Todo</button>
                 {
                     todoList.map((item, index) => (
