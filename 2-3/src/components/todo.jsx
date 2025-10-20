@@ -15,11 +15,10 @@ export function Todo() {
                 {
                     todoList.map((item, index) => (
                         <div key={index}>{item}
-                        </button>
                             <button type="button" onClick={() => {
                                 setTodoList(previous => previous.filter((_, i) => i !== index));
-                            }}> Delete
-                        </button>
+                            }}>X</button>
+                        </div>
                     ))
                 }
             </div>    
