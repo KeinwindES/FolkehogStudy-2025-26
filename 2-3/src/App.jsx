@@ -5,7 +5,7 @@ import { Todo } from './components/todo.jsx'
 function App() {
   return (
     <>
-      <todo><div>Test</div></todo>
+      <Todo />
     </>
   )
 }
