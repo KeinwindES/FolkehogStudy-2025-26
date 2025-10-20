@@ -5,7 +5,7 @@ export function Todo() {
     const [textBoxContent, setTextBoxContent] = useState("");
 
     useEffect(() => {
-        setTodoList(JSON.parse(localStorage.getItem("todos")));
+        setTodoList(JSON.parse(localStorage.getItem("todos") ?? []));
         return () => {
             localStorage.setItem("todos", JSON.stringify(todoList));
         };
