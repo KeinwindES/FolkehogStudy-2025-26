@@ -1,9 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function Todo() {
     const [todoList, setTodoList] = useState(["something", "another thing", "more stuff"]);
     const [textBoxContent, setTextBoxContent] = useState("");
-    
+
+    useEffect(() => {
+        setTodoList(JSON.parse(localStorage.getItem("todos")));
+        return () => {
+            localStorage.setItem("todos", JSON.stringify(todoList));
+        };
+    }, [todoList]);
+
     return (
         <>
             <div>
