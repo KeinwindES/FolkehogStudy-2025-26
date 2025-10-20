@@ -5,11 +5,11 @@ export function Todo() {
     const [textBoxContent, setTextBoxContent] = useState("");
 
     useEffect(() => {
-        setTodoList(JSON.parse(localStorage.getItem("todos")));
-        return () => {
-            localStorage.setItem("todos", JSON.stringify(todoList));
-        };
-    }, [todoList]);
+        let savedData = localStorage.getItem("todoList");
+        if (savedData) {
+            setTodoList(JSON.parse(savedData));
+        }
+    }, []);
 
     return (
         <>
@@ -25,6 +25,7 @@ export function Todo() {
                     todoList.map((item, index) => (
                         <div key={index}>{item}
                             <button type="button" onClick={() => {
+                                localStorage.setItem("todoList", JSON.stringify(todoList));
                                 setTodoList(previous => previous.filter((_, i) => i !== index));
                             }}>X</button>
                         </div>
