@@ -9,15 +9,17 @@ export function Todo() {
             <div>
                 <input type="text" onChange={event => setTextBoxContent(event.target.value)} />
                 <button type="button" onClick={() => {
-                    setTodoList([...todoList, textBoxContent]);
-                    setTextBoxContent("");
+                    setTodoList(previous => [...previous, textBoxContent]);
+                    return array;
                 }}>Add Todo</button>
                 {
                     todoList.map((item, index) => (
-                        <div key={index}>
-                            <div>{item}</div>
-                            <button type="button">X</button>
-                        </div>
+                        <div key={index}>{item}
+                        </button>
+                            <button type="button" onClick={() => {
+                                setTodoList(previous => previous.filter((_, i) => i !== index));
+                            }}> Delete
+                        </button>
                     ))
                 }
             </div>    
