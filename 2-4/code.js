@@ -3,14 +3,14 @@ function isVibrationSupported() {
 }
 
 // Example usage:
-function testVibration() {
+function vibration() {
     if (isVibrationSupported()) {
-        console.log("Vibration API is supported.");
+        return "Vibration API is supported.";
+        navigator.vibrate(200); // vibrates for 200ms
     } else {
-        console.log("Vibration API is not supported.");
+        return "Vibration API is not supported."; 
     }
 }
-
 if (isVibrationSupported()) {
     navigator.vibrate(200); // vibrates for 200ms
     navigator.vibrate([200, 100, 200]); // vibrate, pause, vibrate
