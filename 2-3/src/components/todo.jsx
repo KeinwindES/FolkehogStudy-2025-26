@@ -9,6 +9,7 @@ export function Todo() {
   const [textBoxContent, setTextBoxContent] = useState("");
 
   useEffect(() => {
+    localStorage.clear();
     let savedData = localStorage.getItem("todoList");
     if (savedData) {
       setTodoList(JSON.parse(savedData));
@@ -20,6 +21,7 @@ export function Todo() {
       <div>
         <input
           type="text"
+          value={textBoxContent}
           onChange={(event) => setTextBoxContent(event.target.value)}
         />
         <button
@@ -27,22 +29,24 @@ export function Todo() {
           onClick={() => {
             setTodoList((previous) => {
               let array = [...previous, textBoxContent];
+              localStorage.setItem("todoList", JSON.stringify(array));
               return array;
             });
+            setTextBoxContent("");
           }}
         >
           Add Todo
         </button>
         {todoList.map((item, index) => (
           <div key={index}>
+            <input type="checkbox" />
             {item}
             <button
               type="button"
               onClick={() => {
-                localStorage.setItem("todoList", JSON.stringify(todoList));
-                setTodoList((previous) =>
-                  previous.filter((_, i) => i !== index),
-                );
+                const updatedList = todoList.filter((_, i) => i !== index);
+                localStorage.setItem("todoList", JSON.stringify(updatedList));
+                setTodoList(updatedList);
               }}
             >
               X
