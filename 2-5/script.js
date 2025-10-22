@@ -22,4 +22,31 @@ ctx.moveTo(5, 20);
 ctx.lineTo(5, 50);
 ctx.stroke();
 ctx.closePath();
+
 // DRAWING LOGIC
+
+let currentlyDrawing = false;
+
+canvas.addEventListener("pointerdown", (e) => {
+    console.log("pointerdown");
+    currentlyDrawing = true;
+});
+canvas.addEventListener("pointermove", (e) => {
+    console.log("pointermove");
+    if(!currentlyDrawing) return;
+});
+
+canvas.addEventListener("pointerup", (e) => {
+    console.log("pointerup");
+    currentlyDrawing = false;
+});
+
+canvas.addEventListener("pointerout", (e) => {
+    console.log("pointerout");
+    currentlyDrawing = false;
+});
+
+canvas.addEventListener("pointercancel", (e) => {
+    console.log("pointercancel");
+    currentlyDrawing = false;
+});
