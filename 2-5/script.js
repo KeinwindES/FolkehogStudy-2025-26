@@ -26,6 +26,8 @@ ctx.closePath();
 // DRAWING LOGIC
 
 let currentlyDrawing = false;
+let lastPos = {x:0, y:0};
+
 function GetPos(e){
     return {
         x: e.clientX,
@@ -34,12 +36,20 @@ function GetPos(e){
 }
 
 canvas.addEventListener("pointerdown", (e) => {
+    lastPos = GetPos(e);
     currentlyDrawing = true;
-    console.log("pointerdown");
+    canvas.setPointerCapture(e.pointerId);
 
 });
 canvas.addEventListener("pointermove", (e) => {
     if(!currentlyDrawing) return;
+    let pos = GetPos(e);
+    ctx.beginPath();
+    ctx.moveTo(lastPos.x, lastPos.y);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+    ctx.closePath();
+    lastPos = pos;
 
     console.log("pointermove");
 
@@ -50,14 +60,8 @@ canvas.addEventListener("pointerup", (e) => {
     console.log("pointerup");
 });
 
-canvas.addEventListener("pointerout", (e) => {
-    currentlyDrawing = false;
-    console.log("pointerout");
-
-});
-
 canvas.addEventListener("pointercancel", (e) => {
     currentlyDrawing = false;
     console.log("pointercancel");
-
+    canvas.releasePointerCapture(e.pointerId);
 });
