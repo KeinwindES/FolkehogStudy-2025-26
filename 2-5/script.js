@@ -26,27 +26,38 @@ ctx.closePath();
 // DRAWING LOGIC
 
 let currentlyDrawing = false;
+function GetPos(e){
+    return {
+        x: e.clientX,
+        y: e.clientY
+    };
+}
 
 canvas.addEventListener("pointerdown", (e) => {
-    console.log("pointerdown");
     currentlyDrawing = true;
+    console.log("pointerdown");
+
 });
 canvas.addEventListener("pointermove", (e) => {
-    console.log("pointermove");
     if(!currentlyDrawing) return;
+
+    console.log("pointermove");
+
 });
 
 canvas.addEventListener("pointerup", (e) => {
-    console.log("pointerup");
     currentlyDrawing = false;
+    console.log("pointerup");
 });
 
 canvas.addEventListener("pointerout", (e) => {
-    console.log("pointerout");
     currentlyDrawing = false;
+    console.log("pointerout");
+
 });
 
 canvas.addEventListener("pointercancel", (e) => {
-    console.log("pointercancel");
     currentlyDrawing = false;
+    console.log("pointercancel");
+
 });
