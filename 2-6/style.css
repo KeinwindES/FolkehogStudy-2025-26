@@ -1,0 +1,41 @@
+/* Styles for the quiz container */
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+}
+input[type="radio"], input[type="range"], select {
+    margin-top: 5px;
+}
+#diceContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+#rollDiceButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#diceResult {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #555;
+}
+img {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 100%;
+    height: auto;
+}
