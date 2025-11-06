@@ -2,10 +2,12 @@
 .quiz-container {
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 100px;
     padding: 20px;
     border: 2px solid #ccc;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ceb8a6;
+
 }
 h1, h2 {
     text-align: center;
@@ -38,4 +40,28 @@ img {
     margin: 0 auto 20px auto;
     max-width: 100%;
     height: auto;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('Background.jpg.png');
+    background-size: 50%;
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #45a049;
+} 
+.result {
+    text-align: center;
+    font-size: 22px;
+    color: #222;
+    margin-top: 20px;
 }
