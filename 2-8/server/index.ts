@@ -9,6 +9,9 @@ wss.on("connection", ws => {
 
   ws.on("message", data => {
     const message = data.toString();
+    switch (message) {
+      case "Hello from client!": break;
+    }
     console.log("message", data.toString());
   });
 
