@@ -4,6 +4,9 @@ const websocket = new WebSocket("ws://127.0.0.1:8080");
 
 websocket.addEventListener("open", data => {
   console.log("WebSocket opened", data);
+  setInterval(() => {
+    websocket.send("Hello from client!");
+  }, 1000)
 })
 websocket.addEventListener("message", data => {
   console.log("Received message:", data);
