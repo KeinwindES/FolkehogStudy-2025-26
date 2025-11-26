@@ -8,7 +8,8 @@ wss.on("connection", ws => {
   console.log("connection");
 
   ws.on("message", data => {
-    console.log("message", data);
+    const message = data.toString();
+    console.log("message", data.toString());
   });
 
   ws.on("close", data => {
