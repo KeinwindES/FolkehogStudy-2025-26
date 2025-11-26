@@ -12,13 +12,11 @@ submitButton.addEventListener("click", () => {
 });
 
 websocket.addEventListener("open", (data) => {
-  console.log("WebSocket opened", data);
-  websocket.send("Hello from client!");
-  websocket.send("ekploder");
+
 });
 websocket.addEventListener("message", (event) => {
   const data = event.data;
-  output.innerText = data
+  output.innerText = data;
   console.log("Received message:", data);
 });
 websocket.addEventListener("close", (data) => {

@@ -80,7 +80,15 @@ hr {
     border-radius: 10px;
     overflow-y: auto;
 }
-
+#output{
+    color: #000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    font-size: 1.5rem; /* Larger for PC */
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    padding: 0.3em 0.6em;
+}
 select {
     padding: 0.5em;
     font-size: 1.5rem;
