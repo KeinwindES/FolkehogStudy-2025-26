@@ -10,9 +10,9 @@ function Submit() {
     username = document.getElementById("username").value;
     password = document.getElementById("password").value;
     // Send the username and password to the server
-    window.location.href = `frontend/YouLoggedIn.html`;
+    window.location.href = `YouLoggedIn.html`;
     // Check if the username and password are correct
     if (username === "admin" && password === "admin") {
-            window.location.href = `frontend/Admin.html`;
+            window.location.href = `Admin.html`;
     }
 }
