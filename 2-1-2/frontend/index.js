@@ -10,9 +10,15 @@ function Submit() {
     username = document.getElementById("username").value;
     password = document.getElementById("password").value;
     // Send the username and password to the server
-    window.location.href = `YouLoggedIn.html`;
-    // Check if the username and password are correct
+    // Check credentials
     if (username === "admin" && password === "admin") {
-            window.location.href = `Admin.html`;
+        window.location.href = "Admin.html";
+    } 
+    else if (username === "Meltastic" && password === "GoTo") {
+        window.location.href = "https://meltastic.net";
+    } 
+    else {
+        // Default / normal user login
+        window.location.href = "YouLoggedIn.html";
     }
 }
