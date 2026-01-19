@@ -1,0 +1,19 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
+    "mysql2": "^3.16.0"
+  },
+  "name": "login",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": ""
+}

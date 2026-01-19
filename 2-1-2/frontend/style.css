@@ -49,9 +49,13 @@ button {
     border-radius: 4px;
     transition: background-color 0.3s ease;
 
+
 }
 button:hover {
     background-color: #45a049;
+}
+button:active {
+    background-color: #3e8e41;
 }
 a {
     margin-top: 15px;
