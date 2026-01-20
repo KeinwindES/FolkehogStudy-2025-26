@@ -1,3 +1,5 @@
+const { text } = require("body-parser");
+
 const usernameInput = document.getElementById("usernameInput");
 const passwordInput = document.getElementById("passwordInput");
 const loginButton = document.getElementById("loginButton");

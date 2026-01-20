@@ -1,24 +1,33 @@
-const mysql = require("mysql2/promise");
+const db = require('./db.js');
+const express = require('express');
+const bcrypt = require('bcrypt');
+const cookieParser = require('cookie-parser');
 
-console.log("trying to connect")
+const app = express();
+app.use(express.static("../frontend"));
+app.use(express.json());
+app.use(cookieParser());
 
-process.loadEnvFile("./dev.env");
+app.listen(4000, () => {
+    console.log("Server is running on http://localhost:4000");
+});
 
-const config = {
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: process.env.DATABASEPASSWORD,
-    database: "world"
-};
+app.post('/register',(req, res) => {
+    const { username, password } = req.body;
 
-const pool = mysql.createPool(config);
+    if (!username || !password) {
+        return res.status(400).json({ error: "missing fields" });
+    }
+    try {
+        const hash = await bcrypt.hash(password, 12);
 
-async function getEverythingInTable(table) {
-    return await pool.query("SELECT * FROM " + table);
-}
-async function runApp() {
-    const cities = await getEverythingInTable("city");
-    console.log(cities);
-}
-runApp();
+        db.execute('',[username, password]);
+    }
+    catch {
+
+    }
+});
+
+app.post('/login',(req, res) => {
+    const { username, password } = req.body;
+});
