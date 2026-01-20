@@ -1,5 +1,3 @@
-
-
 const usernameInput = document.getElementById("usernameInput");
 const passwordInput = document.getElementById("passwordInput");
 const loginButton = document.getElementById("loginButton");
@@ -15,7 +13,7 @@ async function SubmitLogin() {
     }
 
     try {
-        const response = await fetch("/register", {
+        const response = await fetch("/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -63,6 +63,8 @@ app.post('/login',async(req, res) => {
     const sessionId = session.GenerateSessionId();
     const sessionExpiry = session.GenerateSessionExpiry();
 
+    await db.execute("INSERT INTO sessions (id, user_id, expires_at) VALUES (?, ?, ?)", [sessionId, user.id, sessionExpiry]);
+
     res.json({message:"YOU LOGGED IN"})
   }
   catch(err) {
