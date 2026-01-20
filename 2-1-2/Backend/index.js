@@ -59,11 +59,16 @@ app.post('/login',async(req, res) => {
       res.status(401).json({ error: "invalid credentials" });
       return;
     }
-
     const sessionId = session.GenerateSessionId();
     const sessionExpiry = session.GenerateSessionExpiry();
 
     await db.execute("INSERT INTO sessions (id, user_id, expires_at) VALUES (?, ?, ?)", [sessionId, user.id, sessionExpiry]);
+    res.cookie("SessionToken", sessionId, {
+      httpOnly: true,
+      secure: false,
+      sameSite: true,
+      expires: sessionExpiry
+    });
 
     res.json({message:"YOU LOGGED IN"})
   }
