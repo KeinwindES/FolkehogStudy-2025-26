@@ -1,4 +1,3 @@
-
 CREATE DATABASE auth_db;
 USE auth_db;
 
@@ -21,7 +20,7 @@ CREATE TABLE sessions (
 
 SELECT id, password_hash FROM users WHERE username = ?
 
- 
+
 INSERT INTO sessions (id, user_id, expires_at) VALUES (?, ?, ?)
 
 INSERT INTO users (username, password_hash) VALUES (?, ?)

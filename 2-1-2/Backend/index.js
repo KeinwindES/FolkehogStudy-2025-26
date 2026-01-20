@@ -21,7 +21,7 @@ app.post('/register',(req, res) => {
     try {
         const hash = await bcrypt.hash(password, 12);
 
-        db.execute('',[username, password]);
+        db.execute('INSERT INTO users (username, password) VALUES (?, ?)',[username, hash]);
     }
     catch {
 
