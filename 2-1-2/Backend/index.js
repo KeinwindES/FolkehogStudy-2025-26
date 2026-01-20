@@ -1,4 +1,5 @@
 const db = require('./db');
+const session = require('./session');
 const express = require('express');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
@@ -34,6 +35,38 @@ app.post('/register',async(req, res) => {
     }
 });
 
-app.post('/login',(req, res) => {
-    const { username, password } = req.body;
+
+app.post('/login',async(req, res) => {
+  const { username, password } = req.body;
+  console.log(req.body)
+
+    if (!username || !password) {
+        return res.status(400).json({ error: "missing fields" });
+    }
+
+
+
+  try {
+    const [users] = await db.execute("SELECT id, password_hash FROM users WHERE username = ?", [username]);
+    if (users.length == 0) {
+      res.status(401).json({ error: "invalif" })
+      return;
+    }
+
+    const user = users[0]
+    const isSamePassword = await bcrypt.compare(password, user.password_hash);
+    if (!isSamePassword) {
+      res.status(401).json({ error: "invalid credentials" });
+      return;
+    }
+
+    const sessionId = session.GenerateSessionId();
+    const sessionExpiry = session.GenerateSessionExpiry();
+
+    res.json({message:"YOU LOGGED IN"})
+  }
+  catch(err) {
+    res.status(500).json({error:"error", eer : err})
+  }
+
 });
