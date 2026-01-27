@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {OBJLoader} from 'three/addons/loaders/OBJLoader.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -31,4 +32,13 @@ function animate() {
   cube2.rotation.y += 0.01;
   renderer.render( scene, camera );
 
+}
+
+{
+  const objLoader = new OBJLoader();
+  objLoader.load('/a.obj', (root) => {
+    scene.add(root);
+    console.log('OBJ loaded');
+    root.scale.set(0.01, 0.01, 0.01);
+  });
 }
