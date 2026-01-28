@@ -54,9 +54,9 @@ function rotate_xy({ x, y, z }, angle) {
   return {
     x: x * c - z * s,
     y,
-    z: x * s - z * c
+    z: x * s + z * c
   }
-}
+} 
 
 const FPS = 60;
 let time = 0
@@ -66,7 +66,7 @@ function frame(){
     time += delta_time;
     clear();
     for(const v of sq){
-        Point(screen(Project(translate_z(v, time/1000 % 2))), 100);
+       Point(screen(Project(translate_z(rotate_xy(v, time/1000)))), 100);
     }
     setTimeout(frame, 1000/FPS);
 }
