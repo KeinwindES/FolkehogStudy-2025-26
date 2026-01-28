@@ -12,7 +12,7 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 function Point({x, y}, size) {
     ctx.fillStyle = foreground;
-    ctx.fillRect(x, y, size, size);
+    ctx.fillRect(x - size / 2, y - size / 2, size, size);
 }
 
 function screen({x,y}){
@@ -22,9 +22,15 @@ function screen({x,y}){
 }
 
 function Project({x, y, z}) {
-    x / z;
-    y / z;
+    x /= z;
+    y /= z;
     return {x, y};
 }
+
+const FPS = 60;
+function frame(){
+    setTimeout(frame, 1000/FPS);
+}
+frame();
 
 Point(screen(Project({x: 0, y: 0, z: 1})), 100);
