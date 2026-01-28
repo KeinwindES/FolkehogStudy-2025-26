@@ -42,11 +42,31 @@ const sq = [
   { x: -0.25, y: -0.25, z: -0.25 },
   { x: 0.25, y: -0.25, z: -0.25 },
 ]
+
+function translate_z({x, y, z}, distance){
+    return {x, y, z: z + distance};
+}
+
+function rotate_xy({ x, y, z }, angle) {
+  const c = Math.cos(angle)
+  const s = Math.sin(angle)
+
+  return {
+    x: x * c - z * s,
+    y,
+    z: x * s - z * c
+  }
+}
+
 const FPS = 60;
+let time = 0
+
 function frame(){
+    const delta_time = 1000 / FPS;
+    time += delta_time;
     clear();
     for(const v of sq){
-        Point(screen(Project(v)), 100);
+        Point(screen(Project(translate_z(v, time/1000 % 2))), 100);
     }
     setTimeout(frame, 1000/FPS);
 }
