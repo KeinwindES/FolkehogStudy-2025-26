@@ -21,4 +21,10 @@ function screen({x,y}){
     return {x,y};
 }
 
-Point(screen({x: 0, y: 0}), 100);
+function Project({x, y, z}) {
+    x / z;
+    y / z;
+    return {x, y};
+}
+
+Point(screen(Project({x: 0, y: 0, z: 1})), 100);

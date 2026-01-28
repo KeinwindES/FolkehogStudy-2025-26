@@ -208,6 +208,31 @@ input {
     padding: 0.5em;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+.dice {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+#rolldicebutton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+#rolldicebutton:hover {
+    background-color: #45a049;
+}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
