@@ -32,14 +32,22 @@ function animate() {
   cube2.rotation.x += 0.01;
   cube2.rotation.y += 0.01;
   renderer.render( scene, camera );
-
+  
 }
 
 {
-  const objLoader = new OBJLoader();
-  objLoader.load('/a.obj', (root) => {
-    scene.add(root);
-    console.log('OBJ loaded');
-    root.scale.set(0.01, 0.01, 0.01);
-  });
-}
+const loader = new GLTFLoader();
+
+loader.load(
+  'LeePerrySmith.glb',
+
+  function (gltf) {
+    const model = gltf.scene;
+    model.scale.set(1, 1, 1);
+    model.position.set(0, 0, 0);
+
+    scene.add(model); 
+  },
+);
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.5));}
