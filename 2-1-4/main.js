@@ -66,7 +66,7 @@ function frame(){
     time += delta_time;
     clear();
     for(const v of sq){
-       Point(screen(Project(translate_z(rotate_xy(v, time/1000)))), 100);
+       Point(screen(Project(translate_z(rotate_xy(v, time/1000),1))), 100);
     }
     setTimeout(frame, 1000/FPS);
 }
