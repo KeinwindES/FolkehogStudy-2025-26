@@ -31,11 +31,24 @@ function Project({x, y, z}) {
     return {x, y};
 }
 
+const sq = [
+  { x: 0.25, y: 0.25, z: 0.25 },
+  { x: -0.25, y: 0.25, z: 0.25 },
+  { x: -0.25, y: -0.25, z: 0.25 },
+  { x: 0.25, y: -0.25, z: 0.25 },
+
+  { x: 0.25, y: 0.25, z: -0.25 },
+  { x: -0.25, y: 0.25, z: -0.25 },
+  { x: -0.25, y: -0.25, z: -0.25 },
+  { x: 0.25, y: -0.25, z: -0.25 },
+]
 const FPS = 60;
 function frame(){
     clear();
+    for(const v of sq){
+        Point(screen(Project(v)), 100);
+    }
     setTimeout(frame, 1000/FPS);
-    Point(screen(Project({x: 0, y: 0, z: 1})), 100);
 }
-frame();
 
+frame();
