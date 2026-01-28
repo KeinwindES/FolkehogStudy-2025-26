@@ -7,8 +7,12 @@ const ctx = canvas.getContext('2d');
 const background = '#000000';
 const foreground = '#2e31e9';
 
-ctx.fillStyle = background;
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+clear();
+
+function clear() {
+    ctx.fillStyle = background;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
 
 function Point({x, y}, size) {
     ctx.fillStyle = foreground;
@@ -29,8 +33,9 @@ function Project({x, y, z}) {
 
 const FPS = 60;
 function frame(){
+    clear();
     setTimeout(frame, 1000/FPS);
+    Point(screen(Project({x: 0, y: 0, z: 1})), 100);
 }
 frame();
 
-Point(screen(Project({x: 0, y: 0, z: 1})), 100);
