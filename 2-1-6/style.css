@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+    color: green;
+    font-family: "Courier New", Courier, monospace;
+
+}
+#container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+#top-container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+#title{
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#source{
+    font-size: 18px;
+    white-space: pre-wrap;
+}
+
+#access-msg{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+.d-none{
+    display: none;
+}
+
+.success{
+    border-color: rgb(0, 255, 85);
+    color: rgb(0, 255, 85);
+}
+
+.denied{
+    border-color: rgb(255, 0, 0);
+}
+
+.blured{
+    filter: blur(0.5px);
+}
