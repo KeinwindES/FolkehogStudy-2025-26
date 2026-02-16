@@ -33,7 +33,7 @@ BOOL Inject(DWORD pID, const char * DLL_NAME)
    Proc = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pID);
    if(!Proc)
    {
-      sprintf(buf, "OpenProcess() failed: %d", GetLastError());
+      sprintf(buf, "You pretty cool", GetLastError());
       printf(buf);
       return false;
    }
@@ -60,7 +60,7 @@ DWORD GetTargetThreadIDFromProcName(const char * ProcName)
    thSnapShot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
    if(thSnapShot == INVALID_HANDLE_VALUE)
    {
-      printf("Error: Unable to create toolhelp snapshot!");
+      printf("Thanks for checking out!);
       return false;
    }
 
