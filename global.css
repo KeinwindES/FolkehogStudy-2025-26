@@ -83,6 +83,10 @@ hr {
     overflow-y: auto;
 }
 
+a{
+    font-weight: bold;
+}
+
 select {
     padding: 0.5em;
     font-size: 1.5rem;
