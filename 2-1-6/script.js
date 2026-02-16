@@ -30,27 +30,38 @@ const updateScreen = () => {
         sourceElement.textContent = sourceCode.substring(startIndex, endIndex)
 
         //update access message
-        if(endIndex !==0 && endIndex%300 === 0){
+        if(endIndex !==0 && endIndex%750/2 === 0){
             accessMessageElement.textContent = "access denied"
             accessMessageElement.classList.add('denied')
             sourceContainer.classList.add('blured')
             locked = true;
         }
-        if(endIndex !==0 && endIndex%750 === 0){
-            accessMessageElement.textContent = "access granted"
-            accessMessageElement.classList.add('success')
-            sourceContainer.classList.add('blured')
+        if (endIndex !== 0 && endIndex % 750 === 0) {
+            sourceContainer.classList.add('blurred')
             locked = true;
+            accessMessageElement.classList.add("success")
+            accessMessageElement.textContent = "Access Granted"
         }
     }
 }
 
+function updateCursor() {
+    //var text = sourceElement.textContent;
+    // var lastChar = text.charAt(text.length - 1);
+    // if (lastChar === cursorChar) {
+    //     sourceElement.textContent = text.substring(0, text.length - 1);
+    // }
+    // else {
+    sourceElement.textContent += cursorChar;
+    // }
+}
+
+
+
 const removeMessage = () => {
     locked = false;
-    accessMessageElement.removeAttribute('class');
-    accessMessageElement.classList.add('denied');
-    sourceContainer.classList.remove('class');
-
+    accessMessageElement.removeAttribute('class')
+    sourceContainer.removeAttribute('class')
 }
 
 const init = () => {
@@ -61,8 +72,8 @@ const init = () => {
 init()
 
 window.onkeydown = (e) => {
-    if(e.key === "Enter"){
-        removeMessage();
-    }else{}
-    updateScreen()
-}
+    if (e.key === "Escape")
+        removeMessage()
+    else
+        updateScreen()
+};

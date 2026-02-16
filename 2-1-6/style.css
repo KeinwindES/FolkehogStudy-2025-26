@@ -1,7 +1,9 @@
 body{
     background-color: black;
+    height: 100vh;
+    margin: 0;
+    font-family: monospace;
     color: green;
-    font-family: "Courier New", Courier, monospace;
 
 }
 #container{
@@ -11,6 +13,7 @@ body{
     border: 1px solid white;
     border-radius: 10px;
     margin-top: 50px;
+    overflow-y: auto;
 }
 
 #top-container{
@@ -19,38 +22,66 @@ body{
     padding: 10px;
     border: 1px solid white;
     border-radius: 10px;
+    margin-top: 20px;
 }
 #title{
     text-align: center;
     font-family: "Courier New", Courier, monospace;
 }
 
-#source{
-    font-size: 18px;
+#source {
+    color: #2AD400;
+    font-size: 15px;
+    font-weight: bold;
+
     white-space: pre-wrap;
+    /* pre-wrap	Whitespace is preserved by the browser. Text will wrap when necessary, and on line breaks */
 }
 
 #access-msg{
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid rgb(255, 0, 0);
-    color: rgb(255, 0, 0);
-    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    border: 2px solid;
+    padding: 1.5rem;
+
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .d-none{
     display: none;
 }
 
-.success{
-    border-color: rgb(0, 255, 85);
-    color: rgb(0, 255, 85);
+.success {
+    color: #10ff00;
+    display: block;
+    animation: accessAnimation 0.5s 2 0s linear;
+
 }
 
-.denied{
-    border-color: rgb(255, 0, 0);
+.denied {
+    color: rgb(255, 0, 0);
+    display: block;
+    animation: accessAnimation 0.5s 2 0s linear;
+
 }
 
 .blured{
     filter: blur(0.5px);
+}
+
+@keyframes accessAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
